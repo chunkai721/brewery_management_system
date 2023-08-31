@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant M as Main
+    participant U as User
+    participant I as Inventory
+    participant P as Production
+    participant S as Sales
+    participant K as Keg
+    M->>U: create_user(username, password)
+    U->>M: User created
+    M->>I: add_item(item_name, quantity, unit)
+    I->>M: Item added to inventory
+    M->>P: add_production(product_name, production_date, quantity)
+    P->>M: Production added
+    M->>S: add_order(customer_name, product_name, quantity, order_date)
+    S->>M: Order added
+    M->>K: update_keg_location(id, location)
+    K->>M: Keg location updated
+    M->>K: update_keg_status(id, status)
+    K->>M: Keg status updated
